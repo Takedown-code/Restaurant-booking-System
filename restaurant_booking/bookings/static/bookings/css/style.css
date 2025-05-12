@@ -1,0 +1,23 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+main {
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1, h2, h3 {
+  margin-bottom: 1rem;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+a {
+  text-decoration: none;
+}
