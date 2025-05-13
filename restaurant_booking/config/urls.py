@@ -3,5 +3,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('bookings.urls')),  # 👈 This line is essential
+    path('', include('restaurant_booking.bookings.urls')),  # Full import path
 ]
