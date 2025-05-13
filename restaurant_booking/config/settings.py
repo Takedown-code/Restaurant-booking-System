@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookings',
+    'restaurant_booking.bookings',  # ✅ fixed path to app
 ]
 
 MIDDLEWARE = [
