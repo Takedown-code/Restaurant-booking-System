@@ -1,4 +1,3 @@
-# bookings/forms.py
 from django import forms
 from .models import Booking
 
@@ -7,7 +6,7 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['user_name', 'table', 'start_time']
         labels = {
-            'user_name': 'Name',  # changes label from 'User name' to 'Name'
+            'user_name': 'Name',
         }
         widgets = {
             'start_time': forms.DateTimeInput(
