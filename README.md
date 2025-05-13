@@ -12,6 +12,7 @@ A full-stack web application built with **Django** and **SQLite** that allows re
 - 🍽 Manage tables and menu items via Django admin panel  
 - ✅ Status system to track active vs cancelled bookings  
 - 💻 Clean, mobile-friendly layout with Bootstrap 5  
+- 📆 Uses HTML5 `datetime-local` input for smooth date/time selection  
 
 ---
 
@@ -23,7 +24,7 @@ A full-stack web application built with **Django** and **SQLite** that allows re
 | Database  | SQLite (relational database)  |
 | Frontend  | HTML, CSS, Bootstrap          |
 | Styling   | Custom CSS + Bootstrap CDN    |
-| Hosting   | Localhost or Render.com       |
+| Hosting   | Render.com                    |
 
 ---
 
@@ -31,7 +32,7 @@ A full-stack web application built with **Django** and **SQLite** that allows re
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/restaurant-booking-system.git
+git clone https://github.com/Takedown-code/Restaurant-booking-System.git
 cd restaurant-booking-system
 ```
 
@@ -46,7 +47,7 @@ source venv/bin/activate
 
 ### 3. Install Dependencies
 ```bash
-pip install django
+pip install -r requirements.txt
 ```
 
 ### 4. Apply Migrations & Create Superuser
@@ -66,22 +67,38 @@ Admin panel: [http://localhost:8000/admin](http://localhost:8000/admin)
 
 ---
 
+## 🌍 Deployment
+
+This project is deployed on **Render**.  
+Live URL: `https://restaurant-booking-system-ukt9.onrender.com`  
+Start command (for Render settings):
+```
+python manage.py migrate && gunicorn config.wsgi:application
+```
+
+---
+
 ## 🗂️ Project Structure
 
 ```
-restaurant_booking/
-├── bookings/              # Main app (views, models, forms, templates)
-│   ├── templates/bookings/
-│   ├── static/bookings/css/
-│   ├── models.py
-│   ├── views.py
+restaurant-booking-system/
+├── bookings/                  # Main Django app
+│   ├── migrations/            # Database migrations
+│   ├── static/                # Static files (CSS, JS)
+│   ├── templates/bookings/    # HTML templates
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
 │   ├── forms.py
+│   ├── models.py
+│   ├── tests.py
 │   ├── urls.py
-├── config/                # Project settings
-├── db.sqlite3             # Local database
-├── manage.py              # Django management script
-├── README.md              # Project info
-└── .gitignore             # Ignored files
+│   └── views.py
+├── config/                    # Project configuration (settings, urls, wsgi)
+├── db.sqlite3                 # SQLite database
+├── manage.py                  # Django management utility
+├── requirements.txt           # Python dependencies
+└── README.md                  # Project documentation
 ```
 
 ---
@@ -94,7 +111,7 @@ restaurant_booking/
 - [x] Main navigation and mobile-friendly design  
 - [x] README and proper attribution  
 - [x] Version Control with Git & GitHub  
-- [x] Deployment-ready (can be hosted on Render)  
+- [x] Deployment-ready (Render-compatible)  
 
 ---
 
@@ -103,7 +120,7 @@ restaurant_booking/
 - Built with Django: https://www.djangoproject.com/  
 - Bootstrap 5 via CDN: https://getbootstrap.com/  
 - Icons and emojis are used under open web usage  
-- **Assisted by AI** (ChatGPT) for project structure guidance and problem solving
+- **Assisted by ChatGPT** for project structure and debugging guidance
 
 ---
 
@@ -112,5 +129,3 @@ restaurant_booking/
 - User authentication (customer logins)  
 - Email confirmations for bookings  
 - Availability calendar and time slot limits  
-
----
